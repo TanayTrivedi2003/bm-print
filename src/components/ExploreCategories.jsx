@@ -19,7 +19,7 @@ function ExploreCategories() {
 
     return (
         <>
-            <section className="relative z-20 w-full bg-white py-10 border-2">
+            <section className="relative z-20 w-full bg-white py-10 ">
                 <div className="mx-auto max-w-7xl px-4">
                     <h2 className="mb-6 text-2xl font-semibold">
                         Explore all categories
