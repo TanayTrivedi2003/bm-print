@@ -21,7 +21,7 @@ function Navbar() {
                     <img
                         src="/images/BM-PRINTS-LOGO.png"
                         alt="Logo"
-                        className="h-18 w-auto"
+                        className="h-13 w-auto"
                     />
                     <span className="mt-2 text-2xl font-bold text-white tracking-wide font-ubuntu">
 

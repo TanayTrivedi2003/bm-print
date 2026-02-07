@@ -19,7 +19,7 @@ function ExploreCategories() {
 
     return (
         <>
-            <section className="relative z-20 w-full bg-white py-10">
+            <section className="relative z-20 w-full bg-white py-10 border-2">
                 <div className="mx-auto max-w-7xl px-4">
                     <h2 className="mb-6 text-2xl font-semibold">
                         Explore all categories
@@ -61,7 +61,7 @@ function ExploreCategories() {
 
 
             {/* GAP so arrows never overlap next section */}
-            <div className="mt-20"></div>
+            <div className="mt-5"></div>
         </>
     );
 }
