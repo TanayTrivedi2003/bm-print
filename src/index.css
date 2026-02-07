@@ -7,3 +7,17 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.footer-title {
+  @apply mb-4 text-base font-semibold text-white;
+}
+
+.footer-list li {
+  @apply cursor-pointer text-sm text-gray-400 hover:text-white transition;
+}
+
+.footer-icon {
+  @apply flex h-9 w-9 items-center justify-center rounded-full
+         bg-slate-800 text-gray-300 hover:bg-blue-600 hover:text-white
+         transition cursor-pointer;
+}
