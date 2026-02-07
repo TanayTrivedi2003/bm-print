@@ -91,7 +91,7 @@ function Footer() {
                     <p>
                         © {new Date().getFullYear()} <span className="text-white">BM Print</span>. All rights reserved.
                     </p>
-                    <p className="text-gray-400 text-sm">
+                    {/* <p className="text-gray-400 text-sm">
                         Designed by{" "}
                         <a
                             href="https://brandmatedigital.com"
@@ -110,7 +110,7 @@ function Footer() {
                         >
                             Verelios Labs
                         </a>
-                    </p>
+                    </p> */}
 
                 </div>
             </div>
