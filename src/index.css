@@ -21,3 +21,24 @@
          bg-slate-800 text-gray-300 hover:bg-blue-600 hover:text-white
          transition cursor-pointer;
 }
+
+/* 🔒 STOP CLICK-THROUGH COMPLETELY */
+.bm-swiper-wrapper {
+  pointer-events: none; /* ❌ nothing inside clickable */
+  position: relative;
+  z-index: 20;
+}
+
+/* ✅ ONLY arrows clickable */
+.bm-swiper .swiper-button-next,
+.bm-swiper .swiper-button-prev {
+  pointer-events: auto;
+  z-index: 50;
+}
+
+/* Optional: arrow look */
+.bm-swiper .swiper-button-next::after,
+.bm-swiper .swiper-button-prev::after {
+  font-size: 14px;
+  color: #6b7280;
+}

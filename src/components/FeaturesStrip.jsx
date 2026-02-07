@@ -7,7 +7,7 @@ import {
 
 function FeaturesStrip() {
     return (
-        <section className="w-full bg-white py-10">
+        <section className="w-full bg-white py-10 relative z-0 select-none">
             <div className="mx-auto max-w-7xl px-4">
                 <div className="grid grid-cols-1 divide-y md:grid-cols-4 md:divide-y-0 md:divide-x">
 
