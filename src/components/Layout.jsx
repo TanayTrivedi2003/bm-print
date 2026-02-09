@@ -7,14 +7,15 @@ function Layout({ children }) {
         <div className="min-h-screen flex flex-col">
             {/* Header Area */}
             <Navbar />
-            <HeroBanner />
-            {/* <CategoryBar /> */}
+
+            <CategoryBar />
 
             {/* Page Content */}
             <main className="flex-1">
                 {children}
-                <Footer />
+
             </main>
+            <Footer />
         </div>
     );
 }

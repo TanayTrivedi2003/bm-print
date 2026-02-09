@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import HeroBanner from "./HeroBanner";
 
 function ExploreCategories() {
     const categories = [
@@ -19,6 +20,7 @@ function ExploreCategories() {
 
     return (
         <>
+            <HeroBanner />
             <section className="relative z-20 w-full bg-white py-10 ">
                 <div className="mx-auto max-w-7xl px-4">
                     <h2 className="mb-6 text-2xl font-semibold">

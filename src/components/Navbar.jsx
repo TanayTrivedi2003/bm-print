@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import {
     FaBars,
@@ -9,6 +11,7 @@ import { FaRegCircleQuestion } from "react-icons/fa6";
 
 function Navbar() {
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <header className="w-full border-b bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 text-white">
@@ -17,22 +20,18 @@ function Navbar() {
 
                 {/* Logo - LEFT */}
                 {/* Logo + Brand Name */}
-                <div className="flex items-center gap-2">
+                <div
+                    onClick={() => navigate("/")}
+                    className="flex items-center gap-2 cursor-pointer"
+                >
                     <img
                         src="/images/BM-PRINTS-LOGO.png"
                         alt="Logo"
                         className="h-13 w-auto"
                     />
-                    <span className="mt-2 text-2xl font-bold text-white tracking-wide font-ubuntu">
-
-                    </span>
-
-
-
-
-
 
                 </div>
+
 
 
                 {/* Desktop Search */}
@@ -47,10 +46,20 @@ function Navbar() {
 
                 {/* Desktop Icons */}
                 <div className="ml-6 hidden md:flex items-center gap-4 text-xl">
-                    <FaRegCircleQuestion />
-                    <FaRegUser />
-                    <FaShoppingBag />
+                    <FaRegCircleQuestion
+                        className="cursor-pointer hover:text-gray-300"
+                        onClick={() => navigate("/help")}
+                    />
+                    <FaRegUser
+                        className="cursor-pointer hover:text-gray-300"
+                        onClick={() => navigate("/login")}
+                    />
+                    <FaShoppingBag
+                        className="cursor-pointer hover:text-gray-300"
+                        onClick={() => navigate("/cart")}
+                    />
                 </div>
+
 
                 {/* Hamburger - RIGHT (Mobile only) */}
                 <button
@@ -76,18 +85,28 @@ function Navbar() {
             {/* Mobile Drawer */}
             {
                 open && (
-                    <div className="border-t bg-white px-4 py-4 md:hidden">
+                    <div className="border-t px-4 py-4 md:hidden">
                         <ul className="space-y-4 text-sm">
-                            <li className="flex items-center gap-3">
+                            <li
+                                onClick={() => navigate("/login")}
+                                className="flex items-center gap-3 cursor-pointer"
+                            >
                                 <FaRegUser /> My Account
                             </li>
-                            <li className="flex items-center gap-3">
+                            <li
+                                onClick={() => navigate("/cart")}
+                                className="flex items-center gap-3 cursor-pointer"
+                            >
                                 <FaShoppingBag /> My Cart
                             </li>
-                            <li className="flex items-center gap-3">
+                            <li
+                                onClick={() => navigate("/help")}
+                                className="flex items-center gap-3 cursor-pointer"
+                            >
                                 <FaRegCircleQuestion /> Help
                             </li>
                         </ul>
+
                     </div>
                 )
             }

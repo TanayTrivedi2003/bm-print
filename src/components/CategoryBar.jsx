@@ -1,18 +1,24 @@
+import { useNavigate, useLocation } from "react-router-dom";
+
 function CategoryBar() {
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const categories = [
-        "View All",
-        "Visiting Cards",
-        "Stationery, Letterheads & Notebooks",
-        "Stamps and Ink",
-        "Signs, Posters & Marketing Materials",
-        "Labels, Stickers & Packaging",
-        "Clothing, Caps & Bags",
-        "Mugs, Albums & Gifts",
-        "Bulk Orders",
-        "Drinkware",
-        "Custom Polo T-shirts",
-        "Custom T-Shirts",
+        // { label: "View All", path: "/products" },
+        { label: "Visiting Cards", path: "/pages/visiting-cards" },
+        { label: "Stationery, Letterheads & Notebooks", path: "/category/stationery" },
+        { label: "Stamps and Ink", path: "/category/stamps" },
+        { label: "Signs, Posters & Marketing Materials", path: "/category/signs-posters" },
+        { label: "Labels, Stickers & Packaging", path: "/category/labels-packaging" },
+        { label: "Clothing, Caps & Bags", path: "/category/clothing" },
+        { label: "Mugs, Albums & Gifts", path: "/category/gifts" },
+        { label: "Bulk Orders", path: "/bulk-orders" },
+        { label: "Drinkware", path: "/category/drinkware" },
+        { label: "Custom Polo T-shirts", path: "/category/polo-tshirts" },
+        { label: "Custom T-Shirts", path: "/category/tshirts" },
     ];
+
 
     return (
         <section className="w-full border-b bg-white">
@@ -21,10 +27,16 @@ function CategoryBar() {
                     {categories.map((item, index) => (
                         <button
                             key={index}
-                            className="relative font-medium text-gray-800 hover:text-black after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
+                            onClick={() => navigate(item.path)}
+                            className={`relative font-medium transition
+        ${location.pathname === item.path
+                                    ? "text-black after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-black"
+                                    : "text-gray-800 hover:text-black after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
+                                }`}
                         >
-                            {item}
+                            {item.label}
                         </button>
+
                     ))}
                 </div>
             </div>
