@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { letterheads } from "../data/StationeryData.jsx";
+import { letterheads } from "../data/stationeryData";
 import ProductCard from "../components/ProductCard.jsx";
 
 function StationeryPage() {
