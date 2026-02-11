@@ -4,7 +4,7 @@ function HeroBanner() {
             <div className="mx-auto max-w-7xl px-4 py-6">
                 <div className="overflow-hidden rounded-2xl shadow-lg">
                     <img
-                        src="/images/hero-banner.png"
+                        src="/images/hero-banner.jpeg"
                         alt="BM Print Hero Banner"
                         className="w-full object-cover"
                     />
