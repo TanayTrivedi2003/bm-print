@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import HeroBanner from "./HeroBanner";
-import { homeCategories } from "../data/homeData";
+import { homeCategories } from "../data/homeData.js";
 
 function ExploreCategories() {
     return (
