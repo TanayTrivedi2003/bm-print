@@ -8,6 +8,8 @@ import DressPage from "./pages/DressPage";
 import PackagingPage from "./pages/PackagingPage";
 import GiftsPage from "./pages/GiftsPage";
 import AvatarPage from "./pages/AvatarPage";
+import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   return (
@@ -80,6 +82,26 @@ function App() {
           element={
             <Layout>
               <AvatarPage />
+            </Layout>
+          }
+        />
+
+        {/* 🛒 CART */}
+        <Route
+          path="/cart"
+          element={
+            <Layout>
+              <CartPage />
+            </Layout>
+          }
+        />
+
+        {/* 💳 CHECKOUT */}
+        <Route
+          path="/checkout"
+          element={
+            <Layout>
+              <CheckoutPage />
             </Layout>
           }
         />
