@@ -1,31 +1,20 @@
-import { useState } from "react";
+import ProductCard from "../components/ProductCard";
 import {
     shapeCards,
     paperTextures,
-    creativeUseCases,
+    creativeUseCases
 } from "../data/businessCardsData";
-import ProductCard from "../components/ProductCard";
 
 function BusinessCards() {
-    const [cart, setCart] = useState([]);
 
-    const handleAddToCart = (product, variant) => {
-        setCart((prev) => [
-            ...prev,
-            {
-                productId: product.id,
-                variantId: variant.id,
-                quantity: variant.minQuantity || 1,
-            },
-        ]);
-
-        console.log("Cart:", cart);
+    const handleAddToCart = (product) => {
+        console.log("Added to cart:", product);
     };
 
     return (
         <div className="w-full bg-white">
 
-            {/* ================= HERO / BANNER ================= */}
+            {/* HERO */}
             <section className="w-full bg-white">
                 <div className="mx-auto max-w-7xl px-4 py-8">
                     <img
@@ -36,7 +25,7 @@ function BusinessCards() {
                 </div>
             </section>
 
-            {/* ================= SHOP BY SHAPES ================= */}
+            {/* SHAPE CARDS */}
             <section className="mx-auto max-w-7xl px-4 py-12">
                 <h2 className="mb-6 text-xl font-semibold text-gray-900">
                     Shop by shapes
@@ -47,14 +36,13 @@ function BusinessCards() {
                         <ProductCard
                             key={item.id}
                             item={item}
-                            onAddToCart={handleAddToCart}
-                            onClick={() => { }} // later → product detail page
+                            onAddToCart={() => handleAddToCart(item)}
                         />
                     ))}
                 </div>
             </section>
 
-            {/* ================= SHOP BY PAPERS & TEXTURES ================= */}
+            {/* PAPER TEXTURES */}
             <section className="mx-auto max-w-7xl px-4 py-12 border-t">
                 <h2 className="mb-6 text-xl font-semibold text-gray-900">
                     Shop by papers & textures
@@ -65,17 +53,13 @@ function BusinessCards() {
                         <ProductCard
                             key={item.id}
                             item={item}
-                            onAddToCart={handleAddToCart}
-                            onClick={() => { }}
+                            onAddToCart={() => handleAddToCart(item)}
                         />
                     ))}
                 </div>
             </section>
 
-
-
-
-            {/* ================= CREATIVE USE CASES ================= */}
+            {/* CREATIVE USE CASES */}
             <section className="mx-auto max-w-7xl px-4 py-12 border-t">
                 <h2 className="mb-6 text-xl font-semibold text-gray-900">
                     Creative ways to use your cards
@@ -85,16 +69,10 @@ function BusinessCards() {
                     {creativeUseCases.map((item, i) => (
                         <div
                             key={i}
-                            className="group cursor-pointer rounded-2xl bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                            className="rounded-2xl bg-white p-3 shadow-sm"
                         >
-                            <div className="overflow-hidden rounded-xl bg-gray-100">
-                                <img
-                                    src={item.image}
-                                    alt={item.name}
-                                    className="h-40 w-full object-cover transition-transform group-hover:scale-105"
-                                />
-                            </div>
-                            <p className="mt-3 text-center text-sm font-semibold text-gray-900">
+                            <img src={item.image} alt={item.name} />
+                            <p className="mt-3 text-center text-sm font-semibold">
                                 {item.name}
                             </p>
                         </div>
@@ -102,7 +80,7 @@ function BusinessCards() {
                 </div>
             </section>
 
-        </div >
+        </div>
     );
 }
 
